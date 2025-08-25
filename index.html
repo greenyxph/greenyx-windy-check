@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>GREENYX Windy Weather</title>
-  <script src="https://api.windy.com/assets/libBoot.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenyx Windy Map</title>
   <style>
-    body { margin: 0; }
-    #windy { width: 100%; height: 100vh; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #windy {
+      width: 100%;
+      height: 100vh;
+    }
   </style>
 </head>
 <body>
   <div id="windy"></div>
 
+  <script src="https://api.windy.com/assets/libBoot.js"></script>
   <script>
     const options = {
-      key: 'Bc6YzH3nlT2owltexLYG9FBpQ0NOS9ss', // Your Windy API key
-      lat: 14.8136,         // San Jose del Monte
-      lon: 121.0450,
+      key: 'Bc6YzH3nlT2owltexLYG9FBpQ0NOS9ss', // Replace with your actual API key
+      lat: 14.957, // San Rafael, Bulacan
+      lon: 120.957,
       zoom: 10,
-      overlay: 'rain'       // Options: wind, temp, clouds, pressure, etc.
+      verbose: true,
+      overlay: 'rain', // Options: wind, temp, clouds, rain, etc.
     };
 
     windyInit(options, function(windyAPI) {
-      const { map, store } = windyAPI;
-      // You can add markers, change overlays, or track storms here
+      const { map } = windyAPI;
+      // You can add custom markers or layers here
     });
   </script>
 </body>
