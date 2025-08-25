@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GREENYX Windy Weather</title>
+  <script src="https://api.windy.com/assets/libBoot.js"></script>
+  <style>
+    body { margin: 0; }
+    #windy { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="windy"></div>
+
+  <script>
+    const options = {
+      key: 'Bc6YzH3nlT2owltexLYG9FBpQ0NOS9ss', // Your Windy API key
+      lat: 14.8136,         // San Jose del Monte
+      lon: 121.0450,
+      zoom: 10,
+      overlay: 'rain'       // Options: wind, temp, clouds, pressure, etc.
+    };
+
+    windyInit(options, function(windyAPI) {
+      const { map, store } = windyAPI;
+      // You can add markers, change overlays, or track storms here
+    });
+  </script>
+</body>
+</html>
